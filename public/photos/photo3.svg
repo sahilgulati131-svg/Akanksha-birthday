@@ -5,16 +5,24 @@
       <stop offset="100%" style="stop-color:#FF8C42"/>
     </linearGradient>
   </defs>
+  <style>
+    .balloon { animation: bob 3s ease-in-out infinite; }
+    .balloon2 { animation-delay: .4s; }
+    .balloon3 { animation-delay: .8s; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-22px); }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g3)"/>
-
-  <!-- balloon bunch -->
-  <ellipse cx="320" cy="460" rx="70" ry="90" fill="#ff6b9d" opacity="0.95"/>
-  <ellipse cx="480" cy="440" rx="75" ry="95" fill="#6bcbff" opacity="0.95"/>
-  <ellipse cx="400" cy="560" rx="65" ry="85" fill="#95e879" opacity="0.95"/>
 
   <path d="M320 550 Q 340 640 400 700" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6"/>
   <path d="M480 535 Q 440 640 400 700" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6"/>
   <path d="M400 645 Q 400 670 400 700" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6"/>
+
+  <ellipse class="balloon" cx="320" cy="460" rx="70" ry="90" fill="#ff6b9d" opacity="0.95"/>
+  <ellipse class="balloon balloon2" cx="480" cy="440" rx="75" ry="95" fill="#6bcbff" opacity="0.95"/>
+  <ellipse class="balloon balloon3" cx="400" cy="560" rx="65" ry="85" fill="#95e879" opacity="0.95"/>
 
   <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Up, up and away</text>
 </svg>

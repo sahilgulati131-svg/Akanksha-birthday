@@ -5,27 +5,52 @@
       <stop offset="100%" style="stop-color:#FF6B9D"/>
     </linearGradient>
   </defs>
+  <style>
+    .streamer { animation: wave 3s ease-in-out infinite; }
+    .streamer2 { animation-delay: .5s; }
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    .hat { transform-box: fill-box; transform-origin: 50% 100%; animation: hat-sway 2.6s ease-in-out infinite; }
+    @keyframes hat-sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    .pompom { animation: bounce 2.6s ease-in-out infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .confetti-piece { transform-box: fill-box; transform-origin: 50% 50%; animation: twirl 2.2s ease-in-out infinite; }
+    @keyframes twirl {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      50% { transform: rotate(180deg) translateY(-10px); }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g6)"/>
 
   <!-- streamers -->
-  <path d="M120 480 Q 260 540 380 490 T 640 500" stroke="#ffffff" stroke-width="14" fill="none" opacity="0.55" stroke-linecap="round"/>
-  <path d="M150 560 Q 300 610 420 570 T 690 590" stroke="#ffffff" stroke-width="10" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <path class="streamer" d="M120 480 Q 260 540 380 490 T 640 500" stroke="#ffffff" stroke-width="14" fill="none" opacity="0.55" stroke-linecap="round"/>
+  <path class="streamer streamer2" d="M150 560 Q 300 610 420 570 T 690 590" stroke="#ffffff" stroke-width="10" fill="none" opacity="0.4" stroke-linecap="round"/>
 
   <!-- party hat -->
-  <path d="M400 380 L 320 620 L 480 620 Z" fill="#ffffff" opacity="0.95"/>
-  <rect x="308" y="600" width="184" height="26" rx="10" fill="#ff8fc0"/>
-  <circle cx="400" cy="380" r="20" fill="#6bcbff"/>
-  <circle cx="380" cy="470" r="10" fill="#ff6b9d"/>
-  <circle cx="420" cy="500" r="10" fill="#95e879"/>
-  <circle cx="400" cy="540" r="10" fill="#ffd93d"/>
-  <circle cx="365" cy="560" r="9" fill="#c44dff"/>
-  <circle cx="435" cy="565" r="9" fill="#6bcbff"/>
+  <g class="hat">
+    <path d="M400 380 L 320 620 L 480 620 Z" fill="#ffffff" opacity="0.95"/>
+    <rect x="308" y="600" width="184" height="26" rx="10" fill="#ff8fc0"/>
+    <circle class="pompom" cx="400" cy="380" r="20" fill="#6bcbff"/>
+    <circle cx="380" cy="470" r="10" fill="#ff6b9d"/>
+    <circle cx="420" cy="500" r="10" fill="#95e879"/>
+    <circle cx="400" cy="540" r="10" fill="#ffd93d"/>
+    <circle cx="365" cy="560" r="9" fill="#c44dff"/>
+    <circle cx="435" cy="565" r="9" fill="#6bcbff"/>
+  </g>
 
   <!-- confetti -->
-  <rect x="230" y="380" width="14" height="14" fill="#ff6b9d" transform="rotate(20 237 387)"/>
-  <rect x="550" y="360" width="14" height="14" fill="#95e879" transform="rotate(-15 557 367)"/>
-  <circle cx="270" cy="300" r="8" fill="#6bcbff"/>
-  <circle cx="540" cy="290" r="8" fill="#c44dff"/>
+  <rect class="confetti-piece" x="230" y="380" width="14" height="14" fill="#ff6b9d" style="animation-delay:0s"/>
+  <rect class="confetti-piece" x="550" y="360" width="14" height="14" fill="#95e879" style="animation-delay:.4s"/>
+  <circle class="confetti-piece" cx="270" cy="300" r="8" fill="#6bcbff" style="animation-delay:.8s"/>
+  <circle class="confetti-piece" cx="540" cy="290" r="8" fill="#c44dff" style="animation-delay:1.2s"/>
 
   <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Party hats on</text>
 </svg>

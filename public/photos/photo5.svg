@@ -5,51 +5,76 @@
       <stop offset="100%" style="stop-color:#A78BFA"/>
     </linearGradient>
   </defs>
+  <style>
+    .burst { transform-box: fill-box; transform-origin: center; animation: explode 1.8s ease-out infinite; }
+    .burst2 { animation-delay: .5s; }
+    .burst3 { animation-delay: 1s; }
+    @keyframes explode {
+      0% { transform: scale(0.5); opacity: 0; }
+      25% { transform: scale(1); opacity: 1; }
+      70% { transform: scale(1.15); opacity: 0.8; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+    .spark-center { animation: pop-in 1.8s ease-out infinite; }
+    .spark-center2 { animation-delay: .5s; }
+    .spark-center3 { animation-delay: 1s; }
+    @keyframes pop-in {
+      0% { opacity: 0; }
+      20%, 60% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g5)"/>
 
   <!-- big firework burst -->
-  <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.9">
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(0 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(45 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(90 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(135 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(180 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(225 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(270 400 330)"/>
-    <line x1="400" y1="330" x2="400" y2="200" transform="rotate(315 400 330)"/>
+  <g class="burst">
+    <g stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.9">
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(0 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(45 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(90 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(135 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(180 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(225 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(270 400 330)"/>
+      <line x1="400" y1="330" x2="400" y2="200" transform="rotate(315 400 330)"/>
+    </g>
+    <g fill="#ffd93d">
+      <circle cx="400" cy="200" r="9" transform="rotate(0 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(45 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(90 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(135 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(180 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(225 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(270 400 330)"/>
+      <circle cx="400" cy="200" r="9" transform="rotate(315 400 330)"/>
+    </g>
   </g>
-  <g fill="#ffd93d">
-    <circle cx="400" cy="200" r="9" transform="rotate(0 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(45 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(90 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(135 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(180 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(225 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(270 400 330)"/>
-    <circle cx="400" cy="200" r="9" transform="rotate(315 400 330)"/>
-  </g>
-  <circle cx="400" cy="330" r="14" fill="#ffffff"/>
+  <circle class="spark-center spark-center1" cx="400" cy="330" r="14" fill="#ffffff"/>
 
   <!-- smaller bursts -->
-  <g stroke="#6bcbff" stroke-width="4" stroke-linecap="round" opacity="0.85">
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(0 600 580)"/>
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(60 600 580)"/>
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(120 600 580)"/>
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(180 600 580)"/>
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(240 600 580)"/>
-    <line x1="600" y1="580" x2="600" y2="510" transform="rotate(300 600 580)"/>
+  <g class="burst burst2">
+    <g stroke="#6bcbff" stroke-width="4" stroke-linecap="round" opacity="0.85">
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(0 600 580)"/>
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(60 600 580)"/>
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(120 600 580)"/>
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(180 600 580)"/>
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(240 600 580)"/>
+      <line x1="600" y1="580" x2="600" y2="510" transform="rotate(300 600 580)"/>
+    </g>
   </g>
-  <circle cx="600" cy="580" r="10" fill="#6bcbff"/>
+  <circle class="spark-center spark-center2" cx="600" cy="580" r="10" fill="#6bcbff"/>
 
-  <g stroke="#95e879" stroke-width="4" stroke-linecap="round" opacity="0.85">
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(0 200 650)"/>
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(60 200 650)"/>
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(120 200 650)"/>
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(180 200 650)"/>
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(240 200 650)"/>
-    <line x1="200" y1="650" x2="200" y2="590" transform="rotate(300 200 650)"/>
+  <g class="burst burst3">
+    <g stroke="#95e879" stroke-width="4" stroke-linecap="round" opacity="0.85">
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(0 200 650)"/>
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(60 200 650)"/>
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(120 200 650)"/>
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(180 200 650)"/>
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(240 200 650)"/>
+      <line x1="200" y1="650" x2="200" y2="590" transform="rotate(300 200 650)"/>
+    </g>
   </g>
-  <circle cx="200" cy="650" r="8" fill="#95e879"/>
+  <circle class="spark-center spark-center3" cx="200" cy="650" r="8" fill="#95e879"/>
 
   <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Fireworks in your honor</text>
 </svg>

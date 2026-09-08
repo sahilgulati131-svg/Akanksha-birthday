@@ -5,6 +5,18 @@
       <stop offset="100%" style="stop-color:#FFD93D"/>
     </linearGradient>
   </defs>
+  <style>
+    .cherry { transform-box: fill-box; transform-origin: 50% 100%; animation: bob 2.4s ease-in-out infinite; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .sprinkle { animation: twinkle 1.8s ease-in-out infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g7)"/>
 
   <!-- cupcake wrapper -->
@@ -21,11 +33,11 @@
   <ellipse cx="400" cy="470" rx="45" ry="35" fill="#ffe3ef"/>
 
   <!-- cherry + sprinkles -->
-  <circle cx="400" cy="440" r="18" fill="#ff5757"/>
-  <rect x="360" y="540" width="12" height="12" fill="#6bcbff" transform="rotate(25 366 546)"/>
-  <rect x="430" y="560" width="12" height="12" fill="#c44dff" transform="rotate(-20 436 566)"/>
-  <rect x="370" y="600" width="12" height="12" fill="#95e879" transform="rotate(15 376 606)"/>
-  <rect x="420" y="610" width="12" height="12" fill="#ff6b9d" transform="rotate(-10 426 616)"/>
+  <circle class="cherry" cx="400" cy="440" r="18" fill="#ff5757"/>
+  <rect class="sprinkle" x="360" y="540" width="12" height="12" fill="#6bcbff" transform="rotate(25 366 546)" style="animation-delay:0s"/>
+  <rect class="sprinkle" x="430" y="560" width="12" height="12" fill="#c44dff" transform="rotate(-20 436 566)" style="animation-delay:.4s"/>
+  <rect class="sprinkle" x="370" y="600" width="12" height="12" fill="#95e879" transform="rotate(15 376 606)" style="animation-delay:.8s"/>
+  <rect class="sprinkle" x="420" y="610" width="12" height="12" fill="#ff6b9d" transform="rotate(-10 426 616)" style="animation-delay:1.2s"/>
 
   <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Sweetest treat for you</text>
 </svg>

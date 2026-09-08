@@ -5,18 +5,101 @@
       <stop offset="100%" style="stop-color:#A78BFA"/>
     </linearGradient>
   </defs>
+  <style>
+    .flower-pop { transform-box: fill-box; transform-origin: 50% 100%; animation: pop 3.4s ease-in-out infinite; }
+    @keyframes pop {
+      0%, 20% { opacity: 0; transform: scale(0.4) translateY(18px); }
+      35% { opacity: 0; transform: scale(0.4) translateY(18px); }
+      45% { opacity: 1; transform: scale(1.08) translateY(0); }
+      55%, 75% { opacity: 1; transform: scale(1) translateY(0); }
+      90%, 100% { opacity: 0; transform: scale(0.4) translateY(18px); }
+    }
+    .petal { animation: petal-glow 3.4s ease-in-out infinite; }
+    @keyframes petal-glow {
+      0%, 40% { opacity: 0.6; }
+      55%, 100% { opacity: 1; }
+    }
+    .lid { transform-box: fill-box; transform-origin: 12% 92%; animation: open 3.4s ease-in-out infinite; }
+    @keyframes open {
+      0%, 20% { transform: rotate(0deg); }
+      40% { transform: rotate(-100deg); }
+      70% { transform: rotate(-100deg); }
+      90% { transform: rotate(-15deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g2)"/>
 
-  <!-- gift box -->
-  <rect x="240" y="500" width="320" height="260" rx="10" fill="#ffffff" opacity="0.95"/>
-  <rect x="240" y="440" width="320" height="70" rx="10" fill="#ffe3ef"/>
-  <rect x="380" y="440" width="40" height="320" fill="#ff8fc0"/>
-  <rect x="240" y="560" width="320" height="40" fill="#ff8fc0"/>
+  <!-- a bouquet, hidden inside the box until the lid opens -->
+  <g class="flower-pop">
+    <!-- stems -->
+    <line x1="400" y1="640" x2="400" y2="555" stroke="#4caf5e" stroke-width="8" stroke-linecap="round"/>
+    <path d="M400 600 Q 372 585 380 560" stroke="#4caf5e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <line x1="330" y1="630" x2="345" y2="562" stroke="#4caf5e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="470" y1="625" x2="458" y2="558" stroke="#4caf5e" stroke-width="7" stroke-linecap="round"/>
 
-  <!-- bow -->
-  <path d="M400 440 C 340 380, 300 400, 340 440 C 300 400, 340 460, 400 440 Z" fill="#ffb3d9"/>
-  <path d="M400 440 C 460 380, 500 400, 460 440 C 500 400, 460 460, 400 440 Z" fill="#ffb3d9"/>
-  <circle cx="400" cy="440" r="14" fill="#ff6b9d"/>
+    <!-- left pink flower -->
+    <g>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ff8fc0" transform="rotate(0 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ffa8d0" transform="rotate(45 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ff8fc0" transform="rotate(90 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ffa8d0" transform="rotate(135 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ff8fc0" transform="rotate(180 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ffa8d0" transform="rotate(225 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ff8fc0" transform="rotate(270 345 530)"/>
+      <ellipse class="petal" cx="345" cy="530" rx="14" ry="28" fill="#ffa8d0" transform="rotate(315 345 530)"/>
+      <circle cx="345" cy="530" r="14" fill="#ffd93d"/>
+    </g>
 
-  <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">A little gift</text>
+    <!-- right lavender flower -->
+    <g>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#c9a2ff" transform="rotate(0 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#b78bf0" transform="rotate(45 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#c9a2ff" transform="rotate(90 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#b78bf0" transform="rotate(135 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#c9a2ff" transform="rotate(180 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#b78bf0" transform="rotate(225 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#c9a2ff" transform="rotate(270 458 525)"/>
+      <ellipse class="petal" cx="458" cy="525" rx="14" ry="28" fill="#b78bf0" transform="rotate(315 458 525)"/>
+      <circle cx="458" cy="525" r="14" fill="#ffd93d"/>
+    </g>
+
+    <!-- centerpiece sunflower -->
+    <g>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(0 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(30 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(60 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(90 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(120 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(150 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(180 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(210 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(240 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(270 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffd93d" transform="rotate(300 400 490)"/>
+      <ellipse class="petal" cx="400" cy="490" rx="20" ry="44" fill="#ffcc2f" transform="rotate(330 400 490)"/>
+      <circle cx="400" cy="490" r="27" fill="#6b4423"/>
+      <circle cx="391" cy="481" r="3" fill="#4a2e17"/>
+      <circle cx="408" cy="483" r="3" fill="#4a2e17"/>
+      <circle cx="393" cy="498" r="3" fill="#4a2e17"/>
+      <circle cx="410" cy="500" r="3" fill="#4a2e17"/>
+      <circle cx="400" cy="490" r="3" fill="#4a2e17"/>
+    </g>
+  </g>
+
+  <!-- box base -->
+  <rect x="240" y="575" width="320" height="185" rx="10" fill="#ffffff" opacity="0.95"/>
+  <rect x="380" y="575" width="40" height="185" fill="#ff8fc0"/>
+  <rect x="240" y="575" width="320" height="36" fill="#ff8fc0"/>
+
+  <!-- lid (opens to reveal the flower) -->
+  <g class="lid">
+    <rect x="230" y="440" width="340" height="135" rx="14" fill="#ffe3ef"/>
+    <rect x="380" y="440" width="40" height="135" fill="#ff8fc0"/>
+    <path d="M400 440 C 340 380, 300 400, 340 440 C 300 400, 340 460, 400 440 Z" fill="#ffb3d9"/>
+    <path d="M400 440 C 460 380, 500 400, 460 440 C 500 400, 460 460, 400 440 Z" fill="#ffb3d9"/>
+    <circle cx="400" cy="440" r="14" fill="#ff6b9d"/>
+  </g>
+
+  <text x="400" y="900" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">A little gift</text>
 </svg>

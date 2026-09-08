@@ -5,28 +5,50 @@
       <stop offset="100%" style="stop-color:#C44DFF"/>
     </linearGradient>
   </defs>
+  <style>
+    .glass-left { transform-box: fill-box; transform-origin: 50% 100%; animation: clink-left 2.2s ease-in-out infinite; }
+    .glass-right { transform-box: fill-box; transform-origin: 50% 100%; animation: clink-right 2.2s ease-in-out infinite; }
+    @keyframes clink-left {
+      0%, 100% { transform: rotate(18deg); }
+      50% { transform: rotate(26deg); }
+    }
+    @keyframes clink-right {
+      0%, 100% { transform: rotate(-18deg); }
+      50% { transform: rotate(-26deg); }
+    }
+    .spark { animation: flash 2.2s ease-in-out infinite; }
+    @keyframes flash {
+      0%, 40%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    .bubble { transform-box: fill-box; transform-origin: 50% 50%; animation: rise 2.6s ease-in infinite; }
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0.9; }
+      100% { transform: translateY(-40px); opacity: 0; }
+    }
+  </style>
   <rect width="800" height="1000" fill="url(#g8)"/>
 
   <!-- glass 1, tilted toward center -->
-  <g transform="rotate(18 320 560)">
+  <g class="glass-left">
     <path d="M280 460 L 360 460 L 335 600 L 305 600 Z" fill="#ffffff" opacity="0.95"/>
     <rect x="315" y="600" width="10" height="60" fill="#ffffff" opacity="0.95"/>
     <ellipse cx="320" cy="662" rx="34" ry="9" fill="#ffffff" opacity="0.95"/>
-    <circle cx="310" cy="520" r="5" fill="#ffd93d" opacity="0.8"/>
-    <circle cx="330" cy="500" r="4" fill="#ffd93d" opacity="0.8"/>
+    <circle class="bubble" cx="310" cy="560" r="5" fill="#ffd93d" opacity="0.8" style="animation-delay:0s"/>
+    <circle class="bubble" cx="330" cy="580" r="4" fill="#ffd93d" opacity="0.8" style="animation-delay:.8s"/>
   </g>
 
   <!-- glass 2, tilted toward center -->
-  <g transform="rotate(-18 480 560)">
+  <g class="glass-right">
     <path d="M440 460 L 520 460 L 495 600 L 465 600 Z" fill="#ffffff" opacity="0.95"/>
     <rect x="475" y="600" width="10" height="60" fill="#ffffff" opacity="0.95"/>
     <ellipse cx="480" cy="662" rx="34" ry="9" fill="#ffffff" opacity="0.95"/>
-    <circle cx="470" cy="520" r="5" fill="#ffd93d" opacity="0.8"/>
-    <circle cx="490" cy="500" r="4" fill="#ffd93d" opacity="0.8"/>
+    <circle class="bubble" cx="470" cy="560" r="5" fill="#ffd93d" opacity="0.8" style="animation-delay:.4s"/>
+    <circle class="bubble" cx="490" cy="580" r="4" fill="#ffd93d" opacity="0.8" style="animation-delay:1.2s"/>
   </g>
 
   <!-- clink spark -->
-  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
+  <g class="spark" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
     <line x1="400" y1="470" x2="400" y2="440"/>
     <line x1="400" y1="470" x2="378" y2="452"/>
     <line x1="400" y1="470" x2="422" y2="452"/>

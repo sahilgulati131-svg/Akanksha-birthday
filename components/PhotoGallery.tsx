@@ -57,12 +57,12 @@ export default function PhotoGallery({
         )}
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-2">
+      <div className="relative z-10 mt-4 flex items-center justify-center gap-2 rounded-full bg-black/20 px-3 py-2 backdrop-blur-md">
         <button
           onClick={() =>
             setActiveIndex((i) => (i - 1 + photos.length) % photos.length)
           }
-          className="rounded-full bg-white/10 px-4 py-2 text-white transition hover:bg-white/20"
+          className="rounded-full bg-white/25 px-4 py-2 text-white transition hover:bg-white/40"
           aria-label="Previous photo"
         >
           ←
@@ -76,7 +76,7 @@ export default function PhotoGallery({
               className={`h-2.5 rounded-full transition-all ${
                 i === activeIndex
                   ? "w-8 bg-pink-400"
-                  : "w-2.5 bg-white/30 hover:bg-white/50"
+                  : "w-2.5 bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Go to photo ${i + 1}`}
             />
@@ -85,7 +85,7 @@ export default function PhotoGallery({
 
         <button
           onClick={() => setActiveIndex((i) => (i + 1) % photos.length)}
-          className="rounded-full bg-white/10 px-4 py-2 text-white transition hover:bg-white/20"
+          className="rounded-full bg-white/25 px-4 py-2 text-white transition hover:bg-white/40"
           aria-label="Next photo"
         >
           →

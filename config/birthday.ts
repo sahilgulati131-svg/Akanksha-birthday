@@ -18,9 +18,13 @@ export const birthdayConfig: BirthdayConfig = {
   birthdayMessage: "Happy Birthday, Akanksha! 🎂",
   cuteMessage: `I know this is a little extra (okay, very extra 😄) — but you deserve every bit of it.
 
-You're the kind of person who makes ordinary days feel special without even trying. Your smile, your energy, the way you light up a room… it's honestly unfair how amazing you are.
+You deserve all the happiness, love, and beautiful moments coming your way. ❤️
 
 I hope today is filled with laughter, cake, and little moments that make you feel as loved as you make everyone around you feel.
+
+And I hope this year, you don't overthink things so much — just breathe, trust yourself, and let good things come to you without questioning if you deserve them (you do).
+
+Enjoy your special day, Akanksha — you deserve every bit of it. 🎉
 
 You are so incredibly special, Akanksha. Never forget that. 🌸`,
   cuteMessageSignature: "— Your Goodwisher 💌",

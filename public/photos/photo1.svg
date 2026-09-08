@@ -5,6 +5,25 @@
       <stop offset="100%" style="stop-color:#C44DFF"/>
     </linearGradient>
   </defs>
+  <style>
+    .flame { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker 1s ease-in-out infinite; }
+    .flame2 { animation-delay: .15s; }
+    .flame3 { animation-delay: .3s; }
+    .flame4 { animation-delay: .45s; }
+    .flame5 { animation-delay: .6s; }
+    @keyframes flicker {
+      0%, 100% { transform: skewX(-5deg) scaleY(1); }
+      50% { transform: skewX(6deg) scaleY(1.12); }
+    }
+    .sparkle { animation: twinkle 1.6s ease-in-out infinite; }
+    .sparkle2 { animation-delay: .5s; }
+    .sparkle3 { animation-delay: 1s; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
+
   <rect width="800" height="1000" fill="url(#g1)"/>
 
   <!-- cake -->
@@ -18,12 +37,21 @@
   <circle cx="510" cy="700" r="10" fill="#ffd93d"/>
 
   <!-- candles -->
-  <rect x="335" y="460" width="10" height="70" fill="#6bcbff"/>
-  <rect x="395" y="450" width="10" height="80" fill="#ffd93d"/>
-  <rect x="455" y="460" width="10" height="70" fill="#95e879"/>
-  <path d="M340 460 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
-  <path d="M400 450 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
-  <path d="M460 460 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+  <rect x="275" y="460" width="10" height="70" fill="#6bcbff"/>
+  <rect x="320" y="450" width="10" height="80" fill="#ffd93d"/>
+  <rect x="365" y="460" width="10" height="70" fill="#95e879"/>
+  <rect x="410" y="450" width="10" height="80" fill="#ff6b9d"/>
+  <rect x="455" y="460" width="10" height="70" fill="#c44dff"/>
+  <path class="flame" d="M280 460 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+  <path class="flame flame2" d="M325 450 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+  <path class="flame flame3" d="M370 460 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+  <path class="flame flame4" d="M415 450 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+  <path class="flame flame5" d="M460 460 q10 -22 0 -38 q-10 16 0 38" fill="#ffb347"/>
+
+  <!-- sparkles around the cake -->
+  <circle class="sparkle" cx="215" cy="560" r="6" fill="#ffffff"/>
+  <circle class="sparkle sparkle2" cx="600" cy="600" r="5" fill="#ffffff"/>
+  <circle class="sparkle sparkle3" cx="240" cy="480" r="4" fill="#ffffff"/>
 
   <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Cake time</text>
 </svg>
