@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1a0a2e;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(
+    135deg,
+    #1a0a2e 0%,
+    #2d1b4e 25%,
+    #4a1942 50%,
+    #1a0a2e 75%,
+    #0f0520 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Balloon animations */
+.balloon {
+  animation: float-up var(--balloon-duration, 15s) ease-in infinite;
+  animation-delay: var(--balloon-delay, 0s);
+}
+
+.balloon-body {
+  width: var(--balloon-size, 40px);
+  height: calc(var(--balloon-size, 40px) * 1.25);
+  background: var(--balloon-color);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  box-shadow:
+    inset -8px -8px 20px rgba(0, 0, 0, 0.15),
+    inset 8px 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.balloon-body::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid var(--balloon-color);
+}
+
+.balloon-string {
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto;
+}
+
+/* Confetti */
+.confetti-particle {
+  width: 10px;
+  height: 10px;
+  animation: confetti-fall 2.5s ease-out forwards;
+  animation-delay: var(--confetti-delay, 0s);
+}
+
+/* Keyframes */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(var(--balloon-drift, 0px))
+      rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(var(--confetti-rotation, 0deg));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(calc(var(--confetti-rotation, 0deg) + 720deg));
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Old paper letter aesthetic */
+.old-paper {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(139, 111, 71, 0.05) 0px,
+      rgba(139, 111, 71, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(circle at 15% 20%, rgba(139, 111, 71, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(139, 111, 71, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(139, 111, 71, 0.08) 0%, transparent 35%),
+    linear-gradient(135deg, #f6ecd9 0%, #ecdcb8 45%, #f2e6c8 100%);
+  box-shadow:
+    0 3px 0 #e3d3a4,
+    0 6px 0 #f6ecd9,
+    0 18px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 70px rgba(139, 111, 71, 0.18);
+  clip-path: polygon(
+    0% 2%,
+    4% 0%,
+    22% 1%,
+    41% 0%,
+    58% 1.5%,
+    79% 0%,
+    96% 1%,
+    100% 3%,
+    99% 22%,
+    100% 42%,
+    99% 61%,
+    100% 80%,
+    99% 96%,
+    100% 100%,
+    79% 99%,
+    59% 100%,
+    39% 99%,
+    21% 100%,
+    4% 99%,
+    0% 97%,
+    1% 79%,
+    0% 60%,
+    1% 40%,
+    0% 20%
+  );
+}
+
+.wax-seal {
+  background: radial-gradient(circle at 35% 30%, #d8564b, #7d1616 75%);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.35);
 }

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="g8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6BCBFF"/>
+      <stop offset="100%" style="stop-color:#C44DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g8)"/>
+
+  <!-- glass 1, tilted toward center -->
+  <g transform="rotate(18 320 560)">
+    <path d="M280 460 L 360 460 L 335 600 L 305 600 Z" fill="#ffffff" opacity="0.95"/>
+    <rect x="315" y="600" width="10" height="60" fill="#ffffff" opacity="0.95"/>
+    <ellipse cx="320" cy="662" rx="34" ry="9" fill="#ffffff" opacity="0.95"/>
+    <circle cx="310" cy="520" r="5" fill="#ffd93d" opacity="0.8"/>
+    <circle cx="330" cy="500" r="4" fill="#ffd93d" opacity="0.8"/>
+  </g>
+
+  <!-- glass 2, tilted toward center -->
+  <g transform="rotate(-18 480 560)">
+    <path d="M440 460 L 520 460 L 495 600 L 465 600 Z" fill="#ffffff" opacity="0.95"/>
+    <rect x="475" y="600" width="10" height="60" fill="#ffffff" opacity="0.95"/>
+    <ellipse cx="480" cy="662" rx="34" ry="9" fill="#ffffff" opacity="0.95"/>
+    <circle cx="470" cy="520" r="5" fill="#ffd93d" opacity="0.8"/>
+    <circle cx="490" cy="500" r="4" fill="#ffd93d" opacity="0.8"/>
+  </g>
+
+  <!-- clink spark -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9">
+    <line x1="400" y1="470" x2="400" y2="440"/>
+    <line x1="400" y1="470" x2="378" y2="452"/>
+    <line x1="400" y1="470" x2="422" y2="452"/>
+  </g>
+
+  <text x="400" y="860" font-family="Georgia,serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.85">Cheers to you</text>
+</svg>

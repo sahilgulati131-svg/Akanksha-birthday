@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Birthday Wish App
 
-## Getting Started
+A fun, interactive Next.js birthday surprise page with floating balloons, a photo gallery, and playful yes/no questions.
 
-First, run the development server:
+## Features
+
+- **Dynamic config** — Edit one file to customize everything
+- **Floating balloons** — Animated balloons across the screen
+- **Photo gallery** — Carousel with stalking apology message
+- **Interactive questions** — Yes/No buttons (the "No" button runs away!)
+- **Confetti** — Bursts when they click "Yes"
+- **Final surprise** — Special message after all questions are answered
+
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customize Everything
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit **`config/birthday.ts`**:
 
-## Learn More
+```ts
+export const birthdayConfig = {
+  name: "Sarah",
+  age: 25,
+  birthdayMessage: "...",
+  stalkingApology: "...",
+  photos: [
+    { src: "/photos/photo1.jpg", caption: "..." },
+  ],
+  questions: [
+    {
+      id: "q1",
+      question: "Do you think you're amazing?",
+      yesResponse: "Correct!",
+      noResponse: "Wrong! Look at these photos",
+    },
+  ],
+  finalMessage: "...",
+};
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Add Their Photos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Save photos to `public/photos/`
+2. Update the `photos` array in `config/birthday.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy to Vercel for free.
